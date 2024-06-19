@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://8tuff20euseq"]
+[gd_scene load_steps=2 format=3 uid="uid://8tuff20euseq"]
+
+[ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://champion.tscn" id="1_q5lk1"]
 
 [node name="GameScene" type="Node2D"]
+
+[node name="Champion" parent="." instance=ExtResource("1_q5lk1")]
+position = Vector2(562, 294)
