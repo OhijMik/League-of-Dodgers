@@ -7,11 +7,9 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var direction
 var mouse_pos
+var hp = 100
 
 func _physics_process(delta):
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	
 	if Input.is_action_just_pressed("move"):
 		mouse_pos = get_viewport().get_mouse_position()
 		direction = (mouse_pos - position).normalized()

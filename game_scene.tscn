@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://8tuff20euseq"]
+[gd_scene load_steps=3 format=3 uid="uid://8tuff20euseq"]
 
 [ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://champion.tscn" id="1_q5lk1"]
+[ext_resource type="PackedScene" uid="uid://gkn3iwuves0t" path="res://projectile.tscn" id="2_e6i66"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Champion" parent="." instance=ExtResource("1_q5lk1")]
 position = Vector2(562, 294)
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Projectile" parent="Projectiles" instance=ExtResource("2_e6i66")]
+position = Vector2(1031, 280)
+
+[node name="Projectile2" parent="Projectiles" instance=ExtResource("2_e6i66")]
+position = Vector2(133, 298)
