@@ -17,6 +17,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	if position.x < -50 or position.x > 1200 or position.y < -50 or position.y > 700:
+		queue_free()
 	move_and_slide()
 
 

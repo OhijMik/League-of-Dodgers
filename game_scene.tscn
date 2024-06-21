@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_scene.gd" id="1_0fbgr"]
 [ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://champion.tscn" id="1_q5lk1"]
-[ext_resource type="PackedScene" uid="uid://gkn3iwuves0t" path="res://projectile.tscn" id="2_e6i66"]
+[ext_resource type="Script" path="res://Projectiles.gd" id="3_k70ja"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_0fbgr")
@@ -11,9 +11,11 @@ script = ExtResource("1_0fbgr")
 position = Vector2(562, 294)
 
 [node name="Projectiles" type="Node2D" parent="."]
+script = ExtResource("3_k70ja")
 
-[node name="Projectile" parent="Projectiles" instance=ExtResource("2_e6i66")]
-position = Vector2(1031, 280)
+[node name="ProjectileSpawn" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
-[node name="Projectile2" parent="Projectiles" instance=ExtResource("2_e6i66")]
-position = Vector2(133, 298)
+[connection signal="timeout" from="ProjectileSpawn" to="." method="_on_projectile_spawn_timeout"]
+[connection signal="timeout" from="ProjectileSpawn" to="Projectiles" method="_on_projectile_spawn_timeout"]
