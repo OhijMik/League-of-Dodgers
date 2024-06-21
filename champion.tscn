@@ -16,4 +16,25 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-color = Color(0.137255, 1, 0, 1)
+color = Color(0.552941, 0.937255, 0.556863, 1)
+
+[node name="HpBar" type="Node2D" parent="."]
+scale = Vector2(0.64, 0.64)
+
+[node name="HealthBar" type="ColorRect" parent="HpBar"]
+offset_left = -48.0
+offset_top = -71.0
+offset_right = 49.0
+offset_bottom = -53.0
+color = Color(0.0980392, 1, 0, 1)
+
+[node name="HealthText" type="Label" parent="HpBar"]
+offset_left = -17.0
+offset_top = -77.0
+offset_right = 18.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

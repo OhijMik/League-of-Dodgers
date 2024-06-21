@@ -9,6 +9,15 @@ var direction
 var mouse_pos
 var hp = 100
 
+@onready var health_bar = get_node("HpBar/HealthBar")
+@onready var health_text = get_node("HpBar/HealthText")
+
+
+func _process(delta):
+	health_text.text = str(hp)
+	health_bar.size.x = 97 * (hp/100.0)
+
+
 func _physics_process(delta):
 	if Input.is_action_just_pressed("move"):
 		mouse_pos = get_viewport().get_mouse_position()
