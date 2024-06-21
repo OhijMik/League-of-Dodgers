@@ -17,5 +17,27 @@ script = ExtResource("3_k70ja")
 wait_time = 2.0
 autostart = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChampionHitboxSize" type="Node2D" parent="CanvasLayer"]
+
+[node name="Label" type="Label" parent="CanvasLayer/ChampionHitboxSize"]
+offset_left = 2.0
+offset_top = 496.0
+offset_right = 435.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 30
+text = "Champion Hitbox Size"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ChampionHitboxSize"]
+offset_left = 14.0
+offset_top = 522.0
+offset_right = 305.0
+offset_bottom = 659.0
+min_value = 50.0
+max_value = 150.0
+value = 100.0
+
 [connection signal="timeout" from="ProjectileSpawn" to="." method="_on_projectile_spawn_timeout"]
 [connection signal="timeout" from="ProjectileSpawn" to="Projectiles" method="_on_projectile_spawn_timeout"]
+[connection signal="value_changed" from="CanvasLayer/ChampionHitboxSize/HSlider" to="." method="_on_h_slider_value_changed"]

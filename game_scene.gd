@@ -1,6 +1,7 @@
 extends Node2D
 
 var cursor_click = preload("res://cursor_click.tscn")
+@onready var champion = get_node("Champion")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,3 +16,7 @@ func _process(delta):
 		var cursor_click_temp = cursor_click.instantiate()
 		cursor_click_temp.position = mouse_pos
 		add_child(cursor_click_temp)
+
+
+func _on_h_slider_value_changed(value):
+	champion.change_size(value / 100)
