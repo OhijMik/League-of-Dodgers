@@ -20,3 +20,7 @@ func _process(delta):
 
 func _on_h_slider_value_changed(value):
 	champion.change_size(value / 100)
+
+
+func _on_speed_slider_value_changed(value):
+	champion.speed = value + 150.0
