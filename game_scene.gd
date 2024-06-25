@@ -1,22 +1,34 @@
 extends Node2D
 
 var cursor_click = preload("res://cursor_click.tscn")
-@onready var champion = get_node("Champion")
-@onready var projectile_spawn_timer = get_node("ProjectileSpawn")
+
+var champion
+var projectile_spawn_timer
+var ui
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	champion = get_node("Champion")
+	projectile_spawn_timer = get_node("ProjectileSpawn")
+	ui = get_node("UI")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("move"):
+	if Input.is_action_just_pressed("move") and not global.paused:
 		var mouse_pos = get_viewport().get_mouse_position()
 		
 		var cursor_click_temp = cursor_click.instantiate()
 		cursor_click_temp.position = mouse_pos
 		add_child(cursor_click_temp)
+	
+	if Input.is_action_just_pressed("escape"):
+		if global.paused:
+			global.paused = false
+			ui.hide()
+		else:
+			global.paused = true
+			ui.show()
 	
 	$UI/ProjectileFrequency/FrequencyLabel.text = str(projectile_spawn_timer.wait_time)
 
