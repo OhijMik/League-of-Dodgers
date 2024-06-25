@@ -24,5 +24,6 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Champion" in body.name:
-		body.hp -= 10
+		if global.game_state != "custom":
+			body.hp -= 10
 		queue_free()
