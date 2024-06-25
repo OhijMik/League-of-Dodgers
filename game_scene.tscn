@@ -107,6 +107,15 @@ offset_bottom = 616.0
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
+[node name="ResumeButton" type="Button" parent="."]
+visible = false
+offset_left = 464.0
+offset_top = 544.0
+offset_right = 696.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
 [connection signal="timeout" from="ProjectileSpawn" to="." method="_on_projectile_spawn_timeout"]
 [connection signal="timeout" from="ProjectileSpawn" to="Projectiles" method="_on_projectile_spawn_timeout"]
 [connection signal="value_changed" from="UI/ChampionHitboxSize/HitboxSlider" to="." method="_on_h_slider_value_changed"]
@@ -115,3 +124,4 @@ text = "Start"
 [connection signal="pressed" from="UI/ProjectileFrequency/MinusButton" to="." method="_on_minus_button_pressed"]
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
