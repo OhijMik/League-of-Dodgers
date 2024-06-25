@@ -26,9 +26,11 @@ func _process(delta):
 		if global.paused:
 			global.paused = false
 			ui.hide()
+			projectile_spawn_timer.set_paused(false)
 		else:
 			global.paused = true
 			ui.show()
+			projectile_spawn_timer.set_paused(true)
 	
 	$UI/ProjectileFrequency/FrequencyLabel.text = str(projectile_spawn_timer.wait_time)
 
@@ -47,3 +49,14 @@ func _on_plus_button_pressed():
 
 func _on_minus_button_pressed():
 	projectile_spawn_timer.wait_time -= 0.05
+
+
+func _on_start_button_pressed():
+	global.paused = false
+	$StartButton.hide()
+	ui.hide()
+	projectile_spawn_timer.start()
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://main_menu.tscn")

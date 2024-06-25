@@ -15,26 +15,24 @@ script = ExtResource("3_k70ja")
 
 [node name="ProjectileSpawn" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ChampionHitboxSize" type="Node2D" parent="UI"]
 
 [node name="HitboxLabel" type="Label" parent="UI/ChampionHitboxSize"]
 offset_left = 2.0
-offset_top = 496.0
+offset_top = 408.0
 offset_right = 435.0
-offset_bottom = 538.0
+offset_bottom = 450.0
 theme_override_font_sizes/font_size = 30
 text = "Champion Hitbox Size"
 
 [node name="HitboxSlider" type="HSlider" parent="UI/ChampionHitboxSize"]
 offset_left = 14.0
-offset_top = 522.0
+offset_top = 434.0
 offset_right = 305.0
-offset_bottom = 659.0
+offset_bottom = 571.0
 min_value = 50.0
 max_value = 150.0
 value = 100.0
@@ -42,36 +40,36 @@ value = 100.0
 [node name="ChampionSpeed" type="Node2D" parent="UI"]
 
 [node name="SpeedLabel" type="Label" parent="UI/ChampionSpeed"]
-offset_top = 340.0
+offset_top = 252.0
 offset_right = 433.0
-offset_bottom = 382.0
+offset_bottom = 294.0
 theme_override_font_sizes/font_size = 30
 text = "Champion Speed
 "
 
 [node name="SpeedSlider" type="HSlider" parent="UI/ChampionSpeed"]
 offset_left = 12.0
-offset_top = 366.0
+offset_top = 278.0
 offset_right = 303.0
-offset_bottom = 503.0
+offset_bottom = 415.0
 max_value = 300.0
 value = 150.0
 
 [node name="ProjectileFrequency" type="Node2D" parent="UI"]
 
 [node name="ProjectileFrequencyLabel" type="Label" parent="UI/ProjectileFrequency"]
-offset_top = 192.0
+offset_top = 104.0
 offset_right = 344.0
-offset_bottom = 234.0
+offset_bottom = 146.0
 theme_override_font_sizes/font_size = 30
 text = "Projectile Frequency
 "
 
 [node name="FrequencyLabel" type="Label" parent="UI/ProjectileFrequency"]
 offset_left = 128.0
-offset_top = 264.0
+offset_top = 176.0
 offset_right = 187.0
-offset_bottom = 306.0
+offset_bottom = 218.0
 theme_override_font_sizes/font_size = 30
 text = "1.00"
 horizontal_alignment = 1
@@ -79,19 +77,35 @@ vertical_alignment = 1
 
 [node name="PlusButton" type="Button" parent="UI/ProjectileFrequency"]
 offset_left = 200.0
-offset_top = 256.0
+offset_top = 168.0
 offset_right = 256.0
-offset_bottom = 319.0
+offset_bottom = 231.0
 theme_override_font_sizes/font_size = 40
 text = "+"
 
 [node name="MinusButton" type="Button" parent="UI/ProjectileFrequency"]
 offset_left = 64.0
-offset_top = 256.0
+offset_top = 168.0
 offset_right = 120.0
-offset_bottom = 319.0
+offset_bottom = 231.0
 theme_override_font_sizes/font_size = 40
 text = "-"
+
+[node name="BackButton" type="Button" parent="UI"]
+offset_left = 24.0
+offset_top = 544.0
+offset_right = 152.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 544.0
+offset_right = 696.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 40
+text = "Start"
 
 [connection signal="timeout" from="ProjectileSpawn" to="." method="_on_projectile_spawn_timeout"]
 [connection signal="timeout" from="ProjectileSpawn" to="Projectiles" method="_on_projectile_spawn_timeout"]
@@ -99,3 +113,5 @@ text = "-"
 [connection signal="value_changed" from="UI/ChampionSpeed/SpeedSlider" to="." method="_on_speed_slider_value_changed"]
 [connection signal="pressed" from="UI/ProjectileFrequency/PlusButton" to="." method="_on_plus_button_pressed"]
 [connection signal="pressed" from="UI/ProjectileFrequency/MinusButton" to="." method="_on_minus_button_pressed"]
+[connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
