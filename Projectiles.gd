@@ -1,6 +1,6 @@
 extends Node2D
 
-var projectile = preload("res://projectile.tscn")
+var projectile = preload("res://medium_projectile.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

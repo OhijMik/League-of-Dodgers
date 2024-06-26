@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://gkn3iwuves0t"]
 
-[ext_resource type="Script" path="res://projectile.gd" id="1_3p231"]
+[ext_resource type="Script" path="res://medium_projectile.gd" id="1_i2225"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovf58"]
-size = Vector2(40, 40)
+size = Vector2(48, 22)
 
-[node name="Projectile" type="CharacterBody2D"]
-script = ExtResource("1_3p231")
+[node name="MediumProjectile" type="CharacterBody2D"]
+script = ExtResource("1_i2225")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -14,10 +14,10 @@ script = ExtResource("1_3p231")
 shape = SubResource("RectangleShape2D_ovf58")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(1, 0.0313726, 0.0745098, 1)
+offset_left = -24.0
+offset_top = -11.0
+offset_right = 24.0
+offset_bottom = 11.0
+color = Color(0, 0.588235, 0.768627, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
