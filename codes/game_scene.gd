@@ -1,6 +1,6 @@
 extends Node2D
 
-var cursor_click = preload("res://cursor_click.tscn")
+var cursor_click = preload("res://scenes/cursor_click.tscn")
 
 var champion
 var projectile_spawn_timer

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
+const SPEED = 650.0
 
-var damage = 20
+var damage = 50
 var champion
 
 

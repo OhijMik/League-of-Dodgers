@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc1hq2rvwfoiw"]
 
-[ext_resource type="Script" path="res://codes/cursor_click.gd" id="1_gc401"]
+[ext_resource type="Script" path="res://codes/cursor_click.gd" id="1_ds6al"]
 [ext_resource type="Texture2D" uid="uid://c80oqorkwhdap" path="res://images/CursorArrows.png" id="2_axitp"]
 
 [sub_resource type="Animation" id="Animation_7w1vh"]
@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="CursorClick" type="Node2D"]
-script = ExtResource("1_gc401")
+script = ExtResource("1_ds6al")
 
 [node name="CursorArrows" type="Sprite2D" parent="."]
 rotation = 0.785398
