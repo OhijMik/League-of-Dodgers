@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc1hq2rvwfoiw"]
 
-[ext_resource type="Texture2D" uid="uid://c80oqorkwhdap" path="res://CursorArrows.png" id="1_1mf7x"]
-[ext_resource type="Script" path="res://cursor_click.gd" id="1_y0opp"]
+[ext_resource type="Script" path="res://codes/cursor_click.gd" id="1_gc401"]
+[ext_resource type="Texture2D" uid="uid://c80oqorkwhdap" path="res://images/CursorArrows.png" id="2_axitp"]
 
 [sub_resource type="Animation" id="Animation_7w1vh"]
 length = 0.001
@@ -41,12 +41,12 @@ _data = {
 }
 
 [node name="CursorClick" type="Node2D"]
-script = ExtResource("1_y0opp")
+script = ExtResource("1_gc401")
 
 [node name="CursorArrows" type="Sprite2D" parent="."]
 rotation = 0.785398
 scale = Vector2(0.19, 0.19)
-texture = ExtResource("1_1mf7x")
+texture = ExtResource("2_axitp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://beixhopf2vygy"]
 
-[ext_resource type="Script" path="res://champion.gd" id="1_hqfxo"]
+[ext_resource type="Script" path="res://codes/champion.gd" id="1_hqfxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk25f"]
 size = Vector2(40, 40)
