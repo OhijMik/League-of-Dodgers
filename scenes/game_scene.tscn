@@ -99,6 +99,14 @@ offset_bottom = 600.0
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
+[node name="ResetButton" type="Button" parent="UI"]
+offset_left = 176.0
+offset_top = 544.0
+offset_right = 304.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 30
+text = "Reset"
+
 [node name="StartButton" type="Button" parent="."]
 offset_left = 464.0
 offset_top = 544.0
@@ -123,5 +131,6 @@ text = "Resume"
 [connection signal="pressed" from="UI/ProjectileFrequency/PlusButton" to="." method="_on_plus_button_pressed"]
 [connection signal="pressed" from="UI/ProjectileFrequency/MinusButton" to="." method="_on_minus_button_pressed"]
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
