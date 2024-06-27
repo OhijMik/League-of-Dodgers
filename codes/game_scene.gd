@@ -5,6 +5,7 @@ var cursor_click = preload("res://scenes/cursor_click.tscn")
 var champion
 var projectile_spawn_timer
 var ui
+var curr_projectile
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
