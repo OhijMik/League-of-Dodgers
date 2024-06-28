@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
+var speed = 600.0
 
 var damage = 20
 var champion
@@ -10,7 +10,7 @@ var champion
 func _ready():
 	champion = get_node("../../Champion")
 	var direction = (champion.position - position).normalized()
-	velocity = direction * SPEED
+	velocity = direction * speed
 	look_at(champion.position)
 
 

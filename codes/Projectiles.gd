@@ -35,6 +35,7 @@ func _on_projectile_spawn_timeout():
 		projectile_temp.position = Vector2(0, rng.randi_range(0, 650))
 	else:
 		projectile_temp.position = Vector2(1150, rng.randi_range(0, 650))
+	projectile_temp.speed = $"../UI/ProjectileSpeed/SpeedSlider".value + 400
 	add_child(projectile_temp)
 
 
