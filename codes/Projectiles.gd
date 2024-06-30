@@ -24,6 +24,9 @@ func _process(delta):
 	elif curr_projectile == "large":
 		$"../UI/ProjectileSelection/LargeProjectile".show()
 		projectile = preload("res://scenes/large_projectile.tscn")
+	elif curr_projectile == "falling":
+		$"../UI/ProjectileSelection/LargeProjectile".show()
+		projectile = preload("res://scenes/falling_projectile.tscn")
 
 func _on_projectile_spawn_timeout():
 	var projectile_temp = projectile.instantiate()
