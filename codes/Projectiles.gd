@@ -45,7 +45,10 @@ func _on_projectile_spawn_timeout():
 		projectile_temp.speed = $"../UI/ProjectileSpeed/SpeedSlider".value + 400
 		add_child(projectile_temp)
 	else:
-		projectile_temp.position = champion.position
+		if not champion.direction:
+			projectile_temp.position = champion.position
+		else:
+			projectile_temp.position = champion.position + ((champion.speed / 2.5) * champion.direction)
 		add_child(projectile_temp)
 
 
