@@ -2,6 +2,7 @@ extends Node2D
 
 var projectile = preload("res://scenes/small_projectile.tscn")
 var curr_projectile = "small"
+var proj_amt = 1
 
 var champion
 
@@ -28,22 +29,25 @@ func _process(delta):
 	elif curr_projectile == "falling":
 		$"../UI/ProjectileSelection/FallingProjectile".show()
 		projectile = preload("res://scenes/falling_projectile.tscn")
+	
+	proj_amt = int($"../UI/ProjectileAmount/AmountLabel".text)
 
 func _on_projectile_spawn_timeout():
 	var projectile_temp = projectile.instantiate()
 	if curr_projectile != "falling":
-		var rng = RandomNumberGenerator.new()
-		var randInt = rng.randi_range(0, 3)
-		if randInt == 0:
-			projectile_temp.position = Vector2(rng.randi_range(0, 1150), 0)
-		elif randInt == 1:
-			projectile_temp.position = Vector2(rng.randi_range(0, 1150), 650)
-		elif randInt == 2:
-			projectile_temp.position = Vector2(0, rng.randi_range(0, 650))
-		else:
-			projectile_temp.position = Vector2(1150, rng.randi_range(0, 650))
-		projectile_temp.speed = $"../UI/ProjectileSpeed/SpeedSlider".value + 400
-		add_child(projectile_temp)
+		for i in range(proj_amt):
+			var rng = RandomNumberGenerator.new()
+			var randInt = rng.randi_range(0, 3)
+			if randInt == 0:
+				projectile_temp.position = Vector2(rng.randi_range(0, 1150), 0)
+			elif randInt == 1:
+				projectile_temp.position = Vector2(rng.randi_range(0, 1150), 650)
+			elif randInt == 2:
+				projectile_temp.position = Vector2(0, rng.randi_range(0, 650))
+			else:
+				projectile_temp.position = Vector2(1150, rng.randi_range(0, 650))
+			projectile_temp.speed = $"../UI/ProjectileSpeed/SpeedSlider".value + 400
+			add_child(projectile_temp)
 	else:
 		if not champion.direction:
 			projectile_temp.position = champion.position
