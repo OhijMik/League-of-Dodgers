@@ -10,7 +10,12 @@ var hp = 100
 
 @onready var health_bar = get_node("HpBar/HealthBar")
 @onready var health_text = get_node("HpBar/HealthText")
-@onready var anim = get_node("AnimationPlayer")
+@onready var hit_anim = get_node("HitAnimationPlayer")
+@onready var run_anim = get_node("RunAnimationPlayer")
+
+
+func _ready():
+	run_anim.play("run")
 
 
 func _process(delta):
@@ -23,7 +28,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("move"):
 			mouse_pos = get_viewport().get_mouse_position()
 			direction = (mouse_pos - position).normalized()
-
+		
 		if direction:
 			if position.x > mouse_pos.x - 10 and position.x < mouse_pos.x + 10 \
 		   		and position.y > mouse_pos.y - 10 and position.y < mouse_pos.y + 10:
@@ -42,6 +47,6 @@ func change_size(size):
 
 
 func hit(damage):
-	anim.play("hit")
+	hit_anim.play("hit")
 	if global.game_state != "custom":
 		hp -= damage
