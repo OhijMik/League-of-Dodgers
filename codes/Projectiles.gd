@@ -1,7 +1,7 @@
 extends Node2D
 
-var projectile = preload("res://scenes/falling_projectile.tscn")
-var curr_projectile = "falling"
+var projectile = preload("res://scenes/small_projectile.tscn")
+var curr_projectile = "small"
 
 var champion
 
@@ -15,6 +15,7 @@ func _process(delta):
 	$"../UI/ProjectileSelection/SmallProjectile".hide()
 	$"../UI/ProjectileSelection/MediumProjectile".hide()
 	$"../UI/ProjectileSelection/LargeProjectile".hide()
+	$"../UI/ProjectileSelection/FallingProjectile".hide()
 	if curr_projectile == "small":
 		$"../UI/ProjectileSelection/SmallProjectile".show()
 		projectile = preload("res://scenes/small_projectile.tscn")
@@ -25,7 +26,7 @@ func _process(delta):
 		$"../UI/ProjectileSelection/LargeProjectile".show()
 		projectile = preload("res://scenes/large_projectile.tscn")
 	elif curr_projectile == "falling":
-		$"../UI/ProjectileSelection/LargeProjectile".show()
+		$"../UI/ProjectileSelection/FallingProjectile".show()
 		projectile = preload("res://scenes/falling_projectile.tscn")
 
 func _on_projectile_spawn_timeout():
@@ -54,12 +55,16 @@ func _on_right_button_pressed():
 	elif curr_projectile == "medium":
 		curr_projectile = "large"
 	elif curr_projectile == "large":
+		curr_projectile = "falling"
+	elif curr_projectile == "falling":
 		curr_projectile = "small"
 
 func _on_left_button_pressed():
-	if curr_projectile == "small":
+	if curr_projectile == "falling":
 		curr_projectile = "large"
 	elif curr_projectile == "medium":
 		curr_projectile = "small"
 	elif curr_projectile == "large":
 		curr_projectile = "medium"
+	elif curr_projectile == "small":
+		curr_projectile = "falling"

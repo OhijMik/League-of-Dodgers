@@ -10,6 +10,7 @@ var hp = 100
 
 @onready var health_bar = get_node("HpBar/HealthBar")
 @onready var health_text = get_node("HpBar/HealthText")
+@onready var anim = get_node("AnimationPlayer")
 
 
 func _process(delta):
@@ -38,3 +39,9 @@ func _physics_process(delta):
 
 func change_size(size):
 	scale = Vector2(size, size)
+
+
+func hit(damage):
+	anim.play("hit")
+	if global.game_state != "custom":
+		hp -= damage

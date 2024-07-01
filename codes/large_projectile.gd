@@ -23,6 +23,5 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Champion" in body.name:
-		if global.game_state != "custom":
-			body.hp -= damage
+		body.hit(damage)
 		queue_free()

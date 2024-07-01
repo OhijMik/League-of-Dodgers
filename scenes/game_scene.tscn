@@ -151,6 +151,63 @@ offset_right = 1002.0
 offset_bottom = 225.0
 color = Color(0.909804, 0.301961, 0, 1)
 
+[node name="FallingProjectile" type="Node2D" parent="UI/ProjectileSelection"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI/ProjectileSelection/FallingProjectile"]
+offset_left = 960.0
+offset_top = 173.0
+offset_right = 962.0
+offset_bottom = 205.0
+scale = Vector2(1.5, 1.5)
+color = Color(0.936134, 0.242017, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="UI/ProjectileSelection/FallingProjectile"]
+offset_left = 1008.0
+offset_top = 217.667
+offset_right = 1010.0
+offset_bottom = 249.667
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+color = Color(0.936134, 0.242017, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="UI/ProjectileSelection/FallingProjectile"]
+offset_left = 1008.0
+offset_top = 173.0
+offset_right = 1010.0
+offset_bottom = 205.0
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+color = Color(0.936134, 0.242017, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="UI/ProjectileSelection/FallingProjectile"]
+offset_left = 1005.33
+offset_top = 173.0
+offset_right = 1007.33
+offset_bottom = 205.0
+scale = Vector2(1.5, 1.5)
+color = Color(0.936134, 0.242017, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="UI/ProjectileSelection/FallingProjectile"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 980.0
+offset_top = 193.0
+offset_right = 985.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+color = Color(0.936134, 0.242017, 0, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="ProjectileSpeed" type="Node2D" parent="UI"]
 
 [node name="ProjectileSpeedLabel" type="Label" parent="UI/ProjectileSpeed"]
