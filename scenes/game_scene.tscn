@@ -21,80 +21,137 @@ wait_time = 2.0
 [node name="ChampionHitboxSize" type="Node2D" parent="UI"]
 
 [node name="HitboxLabel" type="Label" parent="UI/ChampionHitboxSize"]
-offset_left = 2.0
-offset_top = 408.0
-offset_right = 319.0
-offset_bottom = 450.0
+offset_left = 5.0
+offset_top = 380.0
+offset_right = 322.0
+offset_bottom = 422.0
 theme_override_font_sizes/font_size = 30
 text = "Champion Hitbox Size"
 horizontal_alignment = 1
 
 [node name="HitboxSlider" type="HSlider" parent="UI/ChampionHitboxSize"]
-offset_left = 14.0
-offset_top = 434.0
-offset_right = 305.0
-offset_bottom = 571.0
+offset_left = 16.0
+offset_top = 404.0
+offset_right = 307.0
+offset_bottom = 541.0
 min_value = 50.0
 max_value = 150.0
 value = 100.0
 tick_count = 3
 ticks_on_borders = true
 
+[node name="MinLabel" type="Label" parent="UI/ChampionHitboxSize"]
+offset_left = 5.0
+offset_top = 486.0
+offset_right = 45.0
+offset_bottom = 509.0
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidLabel" type="Label" parent="UI/ChampionHitboxSize"]
+offset_left = 142.0
+offset_top = 486.0
+offset_right = 182.0
+offset_bottom = 509.0
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxLabel" type="Label" parent="UI/ChampionHitboxSize"]
+offset_left = 280.0
+offset_top = 486.0
+offset_right = 320.0
+offset_bottom = 509.0
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ChampionSpeed" type="Node2D" parent="UI"]
 
 [node name="SpeedLabel" type="Label" parent="UI/ChampionSpeed"]
-offset_top = 252.0
-offset_right = 320.0
-offset_bottom = 294.0
+offset_left = 3.0
+offset_top = 224.0
+offset_right = 323.0
+offset_bottom = 266.0
 theme_override_font_sizes/font_size = 30
 text = "Champion Speed
 "
 horizontal_alignment = 1
 
 [node name="SpeedSlider" type="HSlider" parent="UI/ChampionSpeed"]
-offset_left = 12.0
-offset_top = 278.0
-offset_right = 303.0
-offset_bottom = 415.0
+offset_left = 15.0
+offset_top = 250.0
+offset_right = 306.0
+offset_bottom = 387.0
 max_value = 300.0
 value = 150.0
 tick_count = 3
 ticks_on_borders = true
 
+[node name="MinLabel" type="Label" parent="UI/ChampionSpeed"]
+offset_left = 3.0
+offset_top = 331.0
+offset_right = 43.0
+offset_bottom = 354.0
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidLabel" type="Label" parent="UI/ChampionSpeed"]
+offset_left = 140.0
+offset_top = 331.0
+offset_right = 180.0
+offset_bottom = 354.0
+text = "300
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxLabel" type="Label" parent="UI/ChampionSpeed"]
+offset_left = 278.0
+offset_top = 331.0
+offset_right = 318.0
+offset_bottom = 354.0
+text = "450"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ProjectileFrequency" type="Node2D" parent="UI"]
 
 [node name="ProjectileFrequencyLabel" type="Label" parent="UI/ProjectileFrequency"]
-offset_top = 104.0
-offset_right = 320.0
-offset_bottom = 146.0
+offset_left = 3.0
+offset_top = 76.0
+offset_right = 323.0
+offset_bottom = 118.0
 theme_override_font_sizes/font_size = 30
 text = "Projectile Frequency
 "
 horizontal_alignment = 1
 
 [node name="FrequencyLabel" type="Label" parent="UI/ProjectileFrequency"]
-offset_left = 128.0
-offset_top = 176.0
-offset_right = 187.0
-offset_bottom = 218.0
+offset_left = 131.0
+offset_top = 148.0
+offset_right = 190.0
+offset_bottom = 190.0
 theme_override_font_sizes/font_size = 30
 text = "1.00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlusButton" type="Button" parent="UI/ProjectileFrequency"]
-offset_left = 200.0
-offset_top = 168.0
-offset_right = 256.0
-offset_bottom = 231.0
+offset_left = 203.0
+offset_top = 140.0
+offset_right = 259.0
+offset_bottom = 203.0
 theme_override_font_sizes/font_size = 40
 text = "+"
 
 [node name="MinusButton" type="Button" parent="UI/ProjectileFrequency"]
-offset_left = 64.0
-offset_top = 168.0
-offset_right = 120.0
-offset_bottom = 231.0
+offset_left = 67.0
+offset_top = 140.0
+offset_right = 123.0
+offset_bottom = 203.0
 theme_override_font_sizes/font_size = 40
 text = "-"
 
@@ -230,6 +287,33 @@ max_value = 800.0
 value = 200.0
 tick_count = 3
 ticks_on_borders = true
+
+[node name="MinLabel" type="Label" parent="UI/ProjectileSpeed"]
+offset_left = 836.0
+offset_top = 357.0
+offset_right = 876.0
+offset_bottom = 380.0
+text = "400"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidLabel" type="Label" parent="UI/ProjectileSpeed"]
+offset_left = 973.0
+offset_top = 357.0
+offset_right = 1013.0
+offset_bottom = 380.0
+text = "800"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxLabel" type="Label" parent="UI/ProjectileSpeed"]
+offset_left = 1111.0
+offset_top = 357.0
+offset_right = 1151.0
+offset_bottom = 380.0
+text = "1200"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="UI"]
 offset_left = 24.0

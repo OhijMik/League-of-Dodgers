@@ -62,7 +62,7 @@ func _on_start_button_pressed():
 
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_resume_button_pressed():
@@ -76,3 +76,4 @@ func _on_reset_button_pressed():
 	projectile_spawn_timer.wait_time = 2.0
 	$UI/ChampionSpeed/SpeedSlider.value = 150
 	$UI/ChampionHitboxSize/HitboxSlider.value = 100
+	$UI/ProjectileSpeed/SpeedSlider.value = 200
