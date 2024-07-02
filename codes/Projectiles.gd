@@ -30,12 +30,12 @@ func _process(delta):
 		$"../UI/ProjectileSelection/FallingProjectile".show()
 		projectile = preload("res://scenes/falling_projectile.tscn")
 	
-	proj_amt = int($"../UI/ProjectileAmount/AmountLabel".text)
+	$"../UI/ProjectileAmount/AmountLabel".text = str(proj_amt)
 
 func _on_projectile_spawn_timeout():
-	var projectile_temp = projectile.instantiate()
 	if curr_projectile != "falling":
 		for i in range(proj_amt):
+			var projectile_temp = projectile.instantiate()
 			var rng = RandomNumberGenerator.new()
 			var randInt = rng.randi_range(0, 3)
 			if randInt == 0:
@@ -49,6 +49,7 @@ func _on_projectile_spawn_timeout():
 			projectile_temp.speed = $"../UI/ProjectileSpeed/SpeedSlider".value + 400
 			add_child(projectile_temp)
 	else:
+		var projectile_temp = projectile.instantiate()
 		if not champion.direction:
 			projectile_temp.position = champion.position
 		else:
@@ -75,3 +76,12 @@ func _on_left_button_pressed():
 		curr_projectile = "medium"
 	elif curr_projectile == "small":
 		curr_projectile = "falling"
+
+
+func _on_plus_button_pressed():
+	proj_amt += 1
+
+
+func _on_minus_button_pressed():
+	if proj_amt != 1:
+		proj_amt -= 1
