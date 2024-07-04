@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://8tuff20euseq"]
 
-[ext_resource type="Script" path="res://codes/game_scene.gd" id="1_0fbgr"]
-[ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://scenes/champion.tscn" id="1_q5lk1"]
-[ext_resource type="Script" path="res://codes/Projectiles.gd" id="3_k70ja"]
+[ext_resource type="Script" path="res://codes/game_scene.gd" id="1_4q2vi"]
+[ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://scenes/champion.tscn" id="2_3nr1k"]
+[ext_resource type="Script" path="res://codes/Projectiles.gd" id="3_4g4oc"]
 
-[node name="GameScene" type="Node2D"]
-script = ExtResource("1_0fbgr")
+[node name="CustomGameScene" type="Node2D"]
+script = ExtResource("1_4q2vi")
 
-[node name="Champion" parent="." instance=ExtResource("1_q5lk1")]
+[node name="Champion" parent="." instance=ExtResource("2_3nr1k")]
 position = Vector2(562, 294)
 
 [node name="Projectiles" type="Node2D" parent="."]
-script = ExtResource("3_k70ja")
+script = ExtResource("3_4g4oc")
 
 [node name="ProjectileSpawn" type="Timer" parent="."]
 wait_time = 2.0
