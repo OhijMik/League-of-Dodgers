@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsdcg7yk78r6o"]
 
-[ext_resource type="Script" path="res://scenes/easy_level_scene.gd" id="1_fkyeb"]
+[ext_resource type="Script" path="res://codes/easy_level_scene.gd" id="1_fkyeb"]
 [ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://scenes/champion.tscn" id="2_344wu"]
-[ext_resource type="Script" path="res://scenes/EasyLevelProjectiles.gd" id="3_yhofu"]
+[ext_resource type="Script" path="res://codes/EasyLevelProjectiles.gd" id="3_yhofu"]
 
 [node name="EasyLevelScene" type="Node2D"]
 script = ExtResource("1_fkyeb")

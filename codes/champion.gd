@@ -21,6 +21,9 @@ func _ready():
 func _process(delta):
 	health_text.text = str(hp)
 	health_bar.size.x = 97 * (hp/100.0)
+	
+	if hp <= 0:
+		get_tree().change_scene_to_file("res://scenes/death_scene.tscn")
 
 
 func _physics_process(delta):
