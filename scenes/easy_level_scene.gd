@@ -23,7 +23,7 @@ func _process(delta):
 		cursor_click_temp.position = mouse_pos
 		add_child(cursor_click_temp)
 	
-	if Input.is_action_just_pressed("escape"):
+	if Input.is_action_just_pressed("escape") and not $StartButton.visible:
 		if global.paused:
 			global.paused = false
 			ui.hide()

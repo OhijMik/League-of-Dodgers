@@ -19,6 +19,11 @@ config/icon="res://images/icon.svg"
 
 global="*res://codes/global.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 move={
