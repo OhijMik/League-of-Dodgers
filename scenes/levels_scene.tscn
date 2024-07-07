@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fdnyv2kew5nf"]
 
-[ext_resource type="Script" path="res://scenes/levels_scene.gd" id="1_65d00"]
+[ext_resource type="Script" path="res://codes/levels_scene.gd" id="1_65d00"]
 
 [node name="LevelsScene" type="Node2D"]
 script = ExtResource("1_65d00")
@@ -55,4 +55,5 @@ text = "Levels"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
