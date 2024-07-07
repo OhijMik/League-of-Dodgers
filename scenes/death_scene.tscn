@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://cxsx6bfvghjkh"]
 
 [node name="DeathScene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 472.0
+offset_top = 64.0
+offset_right = 689.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 50
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 216.0
+offset_right = 753.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 40
+text = "Retry"
