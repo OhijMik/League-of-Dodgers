@@ -7,6 +7,8 @@ var projectile_spawn_timer
 var ui
 var curr_projectile
 
+var projectile_count = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	champion = get_node("Champion")
@@ -34,6 +36,8 @@ func _process(delta):
 			ui.show()
 			$ResumeButton.show()
 			projectile_spawn_timer.set_paused(true)
+	
+	$UI/ProjectileCountLabel.text = str(projectile_count) + "/20"
 
 
 func _on_start_button_pressed():
@@ -52,3 +56,8 @@ func _on_resume_button_pressed():
 	ui.hide()
 	$ResumeButton.hide()
 	projectile_spawn_timer.set_paused(false)
+	
+
+
+func _on_easy_level_projectiles_child_exiting_tree(node):
+	projectile_count += 1

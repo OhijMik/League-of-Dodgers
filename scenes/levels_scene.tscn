@@ -37,14 +37,6 @@ offset_bottom = 608.0
 theme_override_font_sizes/font_size = 30
 text = "Teemo"
 
-[node name="BackButton" type="Button" parent="."]
-offset_left = 24.0
-offset_top = 512.0
-offset_right = 208.0
-offset_bottom = 600.0
-theme_override_font_sizes/font_size = 40
-text = "Back"
-
 [node name="Label" type="Label" parent="."]
 offset_left = 384.0
 offset_top = 8.0
@@ -54,6 +46,14 @@ theme_override_font_sizes/font_size = 75
 text = "Levels"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 544.0
+offset_right = 152.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
 
 [connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
