@@ -8,6 +8,7 @@ var ui
 var curr_projectile
 
 var projectile_count = 0
+var win_condition = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,7 +38,10 @@ func _process(delta):
 			$ResumeButton.show()
 			projectile_spawn_timer.set_paused(true)
 	
-	$UI/ProjectileCountLabel.text = str(projectile_count) + "/20"
+	$UI/ProjectileCountLabel.text = str(projectile_count) + "/" + str(win_condition)
+	
+	if projectile_count >= win_condition:
+		get_tree().change_scene_to_file("res://scenes/win_scene.tscn")
 
 
 func _on_start_button_pressed():
@@ -57,7 +61,6 @@ func _on_resume_button_pressed():
 	$ResumeButton.hide()
 	projectile_spawn_timer.set_paused(false)
 	
-
 
 func _on_easy_level_projectiles_child_exiting_tree(node):
 	projectile_count += 1
