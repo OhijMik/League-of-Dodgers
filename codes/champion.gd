@@ -22,6 +22,9 @@ func _process(delta):
 	health_text.text = str(hp)
 	health_bar.size.x = 97 * (hp/100.0)
 	
+	if hp < 55:
+		$HpBar/HealthText.add_theme_color_override("font_color", Color(255, 255, 255, 1))
+	
 	if hp <= 0:
 		get_tree().change_scene_to_file("res://scenes/death_scene.tscn")
 
