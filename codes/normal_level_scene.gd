@@ -8,7 +8,7 @@ var ui
 var curr_projectile
 
 var projectile_count = 0
-var win_condition = 20
+var win_condition = 25
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -62,5 +62,5 @@ func _on_resume_button_pressed():
 	projectile_spawn_timer.set_paused(false)
 	
 
-func _on_medium_level_projectiles_child_exiting_tree(node):
+func _on_normal_level_projectiles_child_exiting_tree(node):
 	projectile_count += 1

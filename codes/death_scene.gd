@@ -14,6 +14,8 @@ func _process(delta):
 func _on_retry_button_pressed():
 	if global.game_state == "easy":
 		get_tree().change_scene_to_file("res://scenes/easy_level_scene.tscn")
+	elif global.game_state == "normal":
+		get_tree().change_scene_to_file("res://scenes/normal_level_scene.tscn")
 
 
 func _on_main_menu_button_pressed():
