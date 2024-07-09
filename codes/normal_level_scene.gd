@@ -62,5 +62,5 @@ func _on_resume_button_pressed():
 	projectile_spawn_timer.set_paused(false)
 	
 
-func _on_easy_level_projectiles_child_exiting_tree(node):
+func _on_medium_level_projectiles_child_exiting_tree(node):
 	projectile_count += 1
