@@ -56,7 +56,7 @@ theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [connection signal="child_exiting_tree" from="HardLevelProjectiles" to="." method="_on_hard_level_projectiles_child_exiting_tree"]
-[connection signal="timeout" from="ProjectileSpawn" to="." method="_on_projectile_spawn_timeout"]
+[connection signal="timeout" from="ProjectileSpawn" to="HardLevelProjectiles" method="_on_projectile_spawn_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PausedUI/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,60 +1,66 @@
 extends Node2D
 
-var projectile = preload("res://scenes/small_projectile.tscn")
-var curr_projectile = "small"
-var proj_amt = 1
+var cursor_click = preload("res://scenes/cursor_click.tscn")
 
 var champion
+var projectile_spawn_timer
+var ui
+var curr_projectile
+
+var projectile_count = 0
+var win_condition = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	champion = get_node("../Champion")
+	champion = get_node("Champion")
+	projectile_spawn_timer = get_node("ProjectileSpawn")
+	ui = get_node("PausedUI")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if curr_projectile == "small":
-		projectile = preload("res://scenes/small_projectile.tscn")
-	elif curr_projectile == "medium":
-		projectile = preload("res://scenes/medium_projectile.tscn")
-	elif curr_projectile == "large":
-		projectile = preload("res://scenes/large_projectile.tscn")
-	elif curr_projectile == "falling":
-		projectile = preload("res://scenes/falling_projectile.tscn")
-
-
-func _on_projectile_spawn_timeout():
-	var rng = RandomNumberGenerator.new()
-	var randProj = rng.randi_range(0, 2)
-	var projectile_temp
-	if randProj == 0:
-		curr_projectile = "small"
-		projectile = preload("res://scenes/small_projectile.tscn")
-		projectile_temp = projectile.instantiate()
-		projectile_temp.speed = 400
-		projectile_temp.damage = 30
-	elif randProj == 1:
-		curr_projectile = "medium"
-		projectile = preload("res://scenes/medium_projectile.tscn")
-		projectile_temp = projectile.instantiate()
-		projectile_temp.speed = 350
-		projectile_temp.damage = 25
-	else:
-		curr_projectile = "large"
-		projectile = preload("res://scenes/large_projectile.tscn")
-		projectile_temp = projectile.instantiate()
-		projectile_temp.speed = 300
-		projectile_temp.damage = 20
-	
-	for i in range(proj_amt):
-		var randInt = rng.randi_range(0, 3)
-		if randInt == 0:
-			projectile_temp.position = Vector2(rng.randi_range(0, 1150), 0)
-		elif randInt == 1:
-			projectile_temp.position = Vector2(rng.randi_range(0, 1150), 650)
-		elif randInt == 2:
-			projectile_temp.position = Vector2(0, rng.randi_range(0, 650))
-		else:
-			projectile_temp.position = Vector2(1150, rng.randi_range(0, 650))
+	if Input.is_action_just_pressed("move") and not global.paused:
+		var mouse_pos = get_viewport().get_mouse_position()
 		
-		add_child(projectile_temp)
+		var cursor_click_temp = cursor_click.instantiate()
+		cursor_click_temp.position = mouse_pos
+		add_child(cursor_click_temp)
+	
+	if Input.is_action_just_pressed("escape") and not $StartButton.visible:
+		if global.paused:
+			global.paused = false
+			ui.hide()
+			$ResumeButton.hide()
+			projectile_spawn_timer.set_paused(false)
+		else:
+			global.paused = true
+			ui.show()
+			$ResumeButton.show()
+			projectile_spawn_timer.set_paused(true)
+	
+	$UI/ProjectileCountLabel.text = str(projectile_count) + "/" + str(win_condition)
+	
+	if projectile_count >= win_condition:
+		get_tree().change_scene_to_file("res://scenes/win_scene.tscn")
+
+
+func _on_start_button_pressed():
+	global.paused = false
+	$StartButton.hide()
+	ui.hide()
+	projectile_spawn_timer.start()
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/levels_scene.tscn")
+
+
+func _on_resume_button_pressed():
+	global.paused = false
+	ui.hide()
+	$ResumeButton.hide()
+	projectile_spawn_timer.set_paused(false)
+	
+
+func _on_hard_level_projectiles_child_exiting_tree(node):
+	projectile_count += 1
