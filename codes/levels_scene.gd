@@ -28,3 +28,8 @@ func _on_normal_button_pressed():
 func _on_hard_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/hard_level_scene.tscn")
 	global.game_state = "hard"
+
+
+func _on_teemo_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/teemo_level_scene.tscn")
+	global.game_state = "teemo"

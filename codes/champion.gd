@@ -26,7 +26,9 @@ func _process(delta):
 		$HpBar/HealthText.add_theme_color_override("font_color", Color(255, 255, 255, 1))
 	
 	if hp <= 0:
-		get_tree().change_scene_to_file("res://scenes/death_scene.tscn")
+		hit_anim.play("death")
+		$CollisionShape2D.set_disabled(true)
+		global.paused = true
 
 
 func _physics_process(delta):
@@ -56,3 +58,8 @@ func hit(damage):
 	hit_anim.play("hit")
 	if global.game_state != "custom":
 		hp -= damage
+
+
+func _on_hit_animation_player_animation_finished(anim_name):
+	if anim_name == "death":
+		get_tree().change_scene_to_file("res://scenes/death_scene.tscn")
