@@ -46,15 +46,14 @@ func _on_projectile_spawn_timeout():
 		projectile_temp.speed = 300
 		projectile_temp.damage = 20
 	
-	for i in range(proj_amt):
-		var randInt = rng.randi_range(0, 3)
-		if randInt == 0:
-			projectile_temp.position = Vector2(rng.randi_range(0, 1150), 0)
-		elif randInt == 1:
-			projectile_temp.position = Vector2(rng.randi_range(0, 1150), 650)
-		elif randInt == 2:
-			projectile_temp.position = Vector2(0, rng.randi_range(0, 650))
-		else:
-			projectile_temp.position = Vector2(1150, rng.randi_range(0, 650))
-		
-		add_child(projectile_temp)
+	var randInt = rng.randi_range(0, 3)
+	if randInt == 0:
+		projectile_temp.position = Vector2(rng.randi_range(0, 1150), 0)
+	elif randInt == 1:
+		projectile_temp.position = Vector2(rng.randi_range(0, 1150), 650)
+	elif randInt == 2:
+		projectile_temp.position = Vector2(0, rng.randi_range(0, 650))
+	else:
+		projectile_temp.position = Vector2(1150, rng.randi_range(0, 650))
+	
+	add_child(projectile_temp)
