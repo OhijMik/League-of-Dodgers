@@ -68,4 +68,4 @@ func _on_projectile_spawn_timeout():
 		else:
 			projectile_temp.position = champion.position + ((champion.speed / 2.5) * champion.direction)
 		
-		add_child(projectile_temp)
+	add_child(projectile_temp)

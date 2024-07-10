@@ -23,3 +23,8 @@ func _on_easy_button_pressed():
 func _on_normal_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/normal_level_scene.tscn")
 	global.game_state = "normal"
+
+
+func _on_hard_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/hard_level_scene.tscn")
+	global.game_state = "hard"
