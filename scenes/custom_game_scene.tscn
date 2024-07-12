@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://8tuff20euseq"]
 
-[ext_resource type="Script" path="res://codes/game_scene.gd" id="1_4q2vi"]
+[ext_resource type="Script" path="res://codes/custom_game_scene.gd" id="1_4q2vi"]
 [ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://scenes/champion.tscn" id="2_3nr1k"]
 [ext_resource type="Script" path="res://codes/Projectiles.gd" id="3_4g4oc"]
 
