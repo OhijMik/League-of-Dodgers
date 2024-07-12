@@ -49,6 +49,8 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	ui.hide()
 	projectile_spawn_timer.start()
+	$BackgroundSound.play()
+	$StartSound.stop()
 
 
 func _on_back_button_pressed():
@@ -64,3 +66,11 @@ func _on_resume_button_pressed():
 
 func _on_easy_level_projectiles_child_exiting_tree(node):
 	projectile_count += 1
+
+
+func _on_background_sound_finished():
+	$BackgroundSound.play()
+
+
+func _on_start_sound_finished():
+	$StartSound.play()
