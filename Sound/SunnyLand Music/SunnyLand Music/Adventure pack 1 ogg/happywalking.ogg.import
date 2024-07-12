@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdrpc2eq51d16"
+path="res://.godot/imported/happywalking.ogg-483eb0814abcf5d919266174f14b8942.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/SunnyLand Music/SunnyLand Music/Adventure pack 1 ogg/happywalking.ogg"
+dest_files=["res://.godot/imported/happywalking.ogg-483eb0814abcf5d919266174f14b8942.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

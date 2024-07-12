@@ -28,6 +28,8 @@ func _process(delta):
 	if hp <= 0:
 		hit_anim.play("death")
 		$CollisionShape2D.set_disabled(true)
+		if not $DeathSound.playing:
+			$DeathSound.play()
 		global.paused = true
 
 

@@ -52,7 +52,7 @@ func _on_start_button_pressed():
 
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/levels_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_resume_button_pressed():

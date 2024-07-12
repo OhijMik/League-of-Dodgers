@@ -1,5 +1,5 @@
 extends Node
 
 
-var game_state = "custom"
+var game_state = "main"
 var paused = false

@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://7i6b4i7oloof"]
+[gd_scene load_steps=4 format=3 uid="uid://7i6b4i7oloof"]
 
 [ext_resource type="Script" path="res://codes/main_menu.gd" id="1_pohqt"]
+[ext_resource type="Script" path="res://codes/levels_scene.gd" id="2_460is"]
+[ext_resource type="AudioStream" uid="uid://cgiqtpv2i7i3t" path="res://Sound/SunnyLand Music/SunnyLand Music/Adventure pack 1 ogg/fantasy Dragon.ogg" id="2_og3j5"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_pohqt")
 
-[node name="LevelsButton" type="Button" parent="."]
+[node name="Main" type="Node2D" parent="."]
+
+[node name="LevelsButton" type="Button" parent="Main"]
 offset_left = 400.0
 offset_top = 216.0
 offset_right = 753.0
@@ -13,7 +17,7 @@ offset_bottom = 304.0
 theme_override_font_sizes/font_size = 40
 text = "Levels"
 
-[node name="CustomButton" type="Button" parent="."]
+[node name="CustomButton" type="Button" parent="Main"]
 offset_left = 400.0
 offset_top = 360.0
 offset_right = 753.0
@@ -21,7 +25,7 @@ offset_bottom = 448.0
 theme_override_font_sizes/font_size = 40
 text = "Custom"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="Main"]
 offset_left = 400.0
 offset_top = 504.0
 offset_right = 753.0
@@ -29,7 +33,7 @@ offset_bottom = 592.0
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Main"]
 offset_left = 280.0
 offset_top = 40.0
 offset_right = 880.0
@@ -39,6 +43,70 @@ text = "League Sidestep Practice"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="LevelsButton" to="." method="_on_levels_button_pressed"]
-[connection signal="pressed" from="CustomButton" to="." method="_on_custom_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Levels" type="Node2D" parent="."]
+visible = false
+script = ExtResource("2_460is")
+
+[node name="EasyButton" type="Button" parent="Levels"]
+offset_left = 352.0
+offset_top = 136.0
+offset_right = 800.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 30
+text = "Easy"
+
+[node name="NormalButton" type="Button" parent="Levels"]
+offset_left = 352.0
+offset_top = 264.0
+offset_right = 800.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 30
+text = "Normal"
+
+[node name="HardButton" type="Button" parent="Levels"]
+offset_left = 352.0
+offset_top = 392.0
+offset_right = 800.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 30
+text = "Hard"
+
+[node name="TeemoButton" type="Button" parent="Levels"]
+offset_left = 352.0
+offset_top = 520.0
+offset_right = 800.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 30
+text = "Teemo"
+
+[node name="Label" type="Label" parent="Levels"]
+offset_left = 384.0
+offset_top = 8.0
+offset_right = 768.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 75
+text = "Levels"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="Levels"]
+offset_left = 24.0
+offset_top = 544.0
+offset_right = 152.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_og3j5")
+autoplay = true
+
+[connection signal="pressed" from="Main/LevelsButton" to="." method="_on_levels_button_pressed"]
+[connection signal="pressed" from="Main/CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="pressed" from="Main/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Levels/EasyButton" to="Levels" method="_on_easy_button_pressed"]
+[connection signal="pressed" from="Levels/NormalButton" to="Levels" method="_on_normal_button_pressed"]
+[connection signal="pressed" from="Levels/HardButton" to="Levels" method="_on_hard_button_pressed"]
+[connection signal="pressed" from="Levels/TeemoButton" to="Levels" method="_on_teemo_button_pressed"]
+[connection signal="pressed" from="Levels/BackButton" to="Levels" method="_on_back_button_pressed"]
+[connection signal="finished" from="BackgroundSound" to="." method="_on_background_sound_finished"]
