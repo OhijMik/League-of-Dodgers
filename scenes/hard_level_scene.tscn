@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bta56dmuh0tlp"]
+[gd_scene load_steps=6 format=3 uid="uid://bta56dmuh0tlp"]
 
 [ext_resource type="Script" path="res://codes/hard_level_scene.gd" id="1_k3q6p"]
 [ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://scenes/champion.tscn" id="2_mg30u"]
 [ext_resource type="Script" path="res://codes/HardLevelProjectiles.gd" id="3_hpuba"]
+[ext_resource type="AudioStream" uid="uid://bafpp6kta5iud" path="res://Sound/SunnyLand Music/SunnyLand Music/adventure pack 2 ogg/magic cliffs.ogg" id="4_wxyjc"]
+[ext_resource type="AudioStream" uid="uid://dqkx74ad1t4c1" path="res://Sound/SunnyLand Music/SunnyLand Music/Adventure pack 1 ogg/Going Up.ogg" id="5_8vwmt"]
 
 [node name="HardLevelScene" type="Node2D"]
 script = ExtResource("1_k3q6p")
@@ -55,8 +57,18 @@ offset_bottom = 600.0
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wxyjc")
+
+[node name="StartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8vwmt")
+volume_db = -8.509
+autoplay = true
+
 [connection signal="child_exiting_tree" from="HardLevelProjectiles" to="." method="_on_hard_level_projectiles_child_exiting_tree"]
 [connection signal="timeout" from="ProjectileSpawn" to="HardLevelProjectiles" method="_on_projectile_spawn_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PausedUI/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="finished" from="BackgroundSound" to="." method="_on_background_sound_finished"]
+[connection signal="finished" from="StartSound" to="." method="_on_start_sound_finished"]
