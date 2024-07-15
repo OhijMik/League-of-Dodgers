@@ -58,6 +58,7 @@ func change_size(size):
 
 func hit(damage):
 	hit_anim.play("hit")
+	$HitSound.play()
 	if global.game_state != "custom":
 		hp -= damage
 

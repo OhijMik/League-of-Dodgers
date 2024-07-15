@@ -78,3 +78,7 @@ func _on_reset_button_pressed():
 	$UI/ChampionSpeed/SpeedSlider.value = 150
 	$UI/ChampionHitboxSize/HitboxSlider.value = 100
 	$UI/ProjectileSpeed/SpeedSlider.value = 200
+
+
+func _on_audio_stream_player_2d_finished():
+	$BackgroundSound.play()

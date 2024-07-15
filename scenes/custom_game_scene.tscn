@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8tuff20euseq"]
+[gd_scene load_steps=5 format=3 uid="uid://8tuff20euseq"]
 
 [ext_resource type="Script" path="res://codes/custom_game_scene.gd" id="1_4q2vi"]
 [ext_resource type="PackedScene" uid="uid://beixhopf2vygy" path="res://scenes/champion.tscn" id="2_3nr1k"]
 [ext_resource type="Script" path="res://codes/Projectiles.gd" id="3_4g4oc"]
+[ext_resource type="AudioStream" uid="uid://blui830t81ptr" path="res://Sound/SunnyLand Music/SunnyLand Music/adventure pack 2 ogg/summer nights.ogg" id="4_60hxk"]
 
 [node name="CustomGameScene" type="Node2D"]
 script = ExtResource("1_4q2vi")
@@ -386,6 +387,11 @@ offset_bottom = 616.0
 theme_override_font_sizes/font_size = 40
 text = "Resume"
 
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_60hxk")
+volume_db = -10.0
+autoplay = true
+
 [connection signal="timeout" from="ProjectileSpawn" to="." method="_on_projectile_spawn_timeout"]
 [connection signal="timeout" from="ProjectileSpawn" to="Projectiles" method="_on_projectile_spawn_timeout"]
 [connection signal="value_changed" from="UI/ChampionHitboxSize/HitboxSlider" to="." method="_on_h_slider_value_changed"]
@@ -400,3 +406,4 @@ text = "Resume"
 [connection signal="pressed" from="UI/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="finished" from="BackgroundSound" to="." method="_on_audio_stream_player_2d_finished"]

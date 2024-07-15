@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://beixhopf2vygy"]
+[gd_scene load_steps=12 format=3 uid="uid://beixhopf2vygy"]
 
 [ext_resource type="Script" path="res://codes/champion.gd" id="1_hqfxo"]
 [ext_resource type="AudioStream" uid="uid://cya0gvsriiy7o" path="res://Sound/pixel-death-66829.mp3" id="2_vhia3"]
+[ext_resource type="AudioStream" uid="uid://ba2qvr0bdqsvo" path="res://Sound/pixel-sound-effect-3-82880.mp3" id="3_0perm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk25f"]
 size = Vector2(40, 40)
@@ -241,5 +242,9 @@ libraries = {
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_vhia3")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0perm")
+volume_db = -10.0
 
 [connection signal="animation_finished" from="HitAnimationPlayer" to="." method="_on_hit_animation_player_animation_finished"]

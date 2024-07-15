@@ -59,6 +59,7 @@ text = "Back"
 
 [node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_d7p6p")
+volume_db = -10.0
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_458f4")
