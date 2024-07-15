@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxsx6bfvghjkh"]
+[gd_scene load_steps=3 format=3 uid="uid://cxsx6bfvghjkh"]
 
 [ext_resource type="Script" path="res://codes/death_scene.gd" id="1_5px0x"]
+[ext_resource type="AudioStream" uid="uid://duxf6418a84lq" path="res://Sound/SunnyLand Music/SunnyLand Music/Adventure pack 1 ogg/exploration.ogg" id="2_dy1v0"]
 
 [node name="DeathScene" type="Node2D"]
 script = ExtResource("1_5px0x")
@@ -39,6 +40,11 @@ offset_bottom = 592.0
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dy1v0")
+autoplay = true
+
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="BackgroundSound" to="." method="_on_background_sound_finished"]

@@ -245,6 +245,5 @@ stream = ExtResource("2_vhia3")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0perm")
-volume_db = -10.0
 
 [connection signal="animation_finished" from="HitAnimationPlayer" to="." method="_on_hit_animation_player_animation_finished"]
